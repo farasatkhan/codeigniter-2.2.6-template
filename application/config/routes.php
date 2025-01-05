@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = 'main';
+$route['api/(:any)'] = 'api/$1';
 $route['templates/(:any)'] = 'templates/view/$1';
 $route['(:any)'] = 'main/index';
 $route['404_override'] = '';
