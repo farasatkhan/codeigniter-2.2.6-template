@@ -55,7 +55,7 @@ $config['rest_message_field_name'] = 'error';
 |
 | Should we enable emulation of the request (e.g. used in Mootools request)?
 |
-|	Default: TRUE
+|	Default: false
 |
 */
 $config['enable_emulate_request'] = TRUE;
@@ -334,7 +334,6 @@ $config['rest_logs_table'] = 'logs';
 	  `time` int(11) NOT NULL,
 	  `rtime` float DEFAULT NULL,
 	  `authorized` tinyint(1) NOT NULL,
-	  `response_code` smallint(3) NOT NULL,
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
@@ -396,7 +395,7 @@ $config['rest_logs_json_params'] = FALSE;
 |
 | The table name in your database that stores limits.
 |
-|	'limits'
+|	'logs'
 |
 */
 $config['rest_limits_table'] = 'limits';
@@ -421,12 +420,6 @@ $config['rest_limits_table'] = 'limits';
 	  PRIMARY KEY (`id`)
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 |
-| To specify limits, within your Controller __construct() method add per-method 
-| limits with:
-
- $this->method['METHOD_NAME']['limit'] = [NUM_REQUESTS_PER_HOUR];
- 
-| See application/controllers/api/example.php for examples. 
 */
 $config['rest_enable_limits'] = FALSE;
 

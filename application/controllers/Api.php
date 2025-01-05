@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once APPPATH . '/libraries/restapi/REST_Controller.php';
+require_once APPPATH . '/libraries/REST_Controller.php';
 
 class Api extends REST_Controller {
 
